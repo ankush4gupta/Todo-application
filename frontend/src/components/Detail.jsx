@@ -47,7 +47,9 @@ export const Detail = () => {
                 deleteTodo()
             }}>Delete</button>
 
-            <button>Renew</button>
+            <button onClick={() => {
+                navigate(`/update/${taskId}`, { replace: true });
+            }}>Renew</button>
         </div>
         {singletodo ? <div className="single-todo">
             <p>TaskID : {singletodo.taskId}</p>

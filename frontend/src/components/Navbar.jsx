@@ -10,7 +10,7 @@ export const Navbar = (props) => {
     const logout = () => {
         localStorage.removeItem("usercred");
         props.logout(false)
-        navigate(`/login`, { replace: false });
+        navigate(`/`, { replace: false });
 
     }
     console.log(userdata)
@@ -23,7 +23,7 @@ export const Navbar = (props) => {
                     <Link to="/todo">Todos</Link>
                 </button></div> : <div>
                 <button>
-                    <Link to="/login">Login</Link>
+                    <Link to="/">Login</Link>
                 </button>
                 <button>
                     <Link to="/register">Registration</Link>

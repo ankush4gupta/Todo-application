@@ -25,6 +25,8 @@ export const Login = ({ logout }) => {
                 window.alert("Login done")
                 logout(true)
                 navigate(`/todo`, { replace: false });
+            } else {
+                window.alert(data.message)
             }
 
             setuser({
