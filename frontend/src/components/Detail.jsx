@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
-export const Detail = () => {
+export const Detail = ({ isLoggedIn }) => {
     let { taskId } = useParams();
     let navigate = useNavigate();
     const [singletodo, setsingletodo] = useState()
@@ -40,7 +40,7 @@ export const Detail = () => {
 
 
 
-    return <div>
+    return isLoggedIn ? <div>
         <h1>Todo Description</h1>
         <div className="button">
             <button onClick={() => {
@@ -56,5 +56,8 @@ export const Detail = () => {
             <p>Title : {singletodo.title}</p>
             <p>Creation time : {singletodo.startTime}</p>
         </div> : ""}
+    </div> : <div>
+        <h1>Please Login</h1>
+
     </div>
 }

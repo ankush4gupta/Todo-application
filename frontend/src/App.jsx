@@ -35,7 +35,11 @@ function App() {
           </Protected>
         }></Route>
         <Route path="/create" element={<Create />}></Route>
-        <Route path="/:taskId" element={<Detail />}></Route>
+
+        <Route path="/:taskId" element={
+          <Detail isLoggedIn={isLoggedIn} />
+
+        }></Route>
         <Route path="/update/:taskId" element={<Renew />}></Route>
       </Routes>
 
